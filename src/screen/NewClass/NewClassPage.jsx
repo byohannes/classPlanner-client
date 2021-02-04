@@ -19,7 +19,7 @@ const NewClassPage = ({ user, city, component }) => {
   dayjs.extend(isBetween);
 
   const getCourses = useCallback(async () => {
-    await axios.get(`/api/v1/courses/`).then((response) => {
+    await axios.get(`https://class-planner-api.herokuapp.com/api/v1/courses/`).then((response) => {
       if (response.data.data.length > 0) {
         let courseFound = response.data.data.filter(
           (course) => course.cityName === city
@@ -35,7 +35,7 @@ const NewClassPage = ({ user, city, component }) => {
     });
   }, [city, history]);
   const getClasses = async () => {
-    const allClasses = await axios.get(`/api/v1/classes/`);
+    const allClasses = await axios.get(`https://class-planner-api.herokuapp.com/api/v1/classes/`);
     if (allClasses.data.data.length > 0) {
       return allClasses.data.data;
     } else {
@@ -91,7 +91,7 @@ const NewClassPage = ({ user, city, component }) => {
         });
       } else {
         await axios
-          .post(`/api/v1/classes`, {
+          .post(`https://class-planner-api.herokuapp.com/api/v1/classes`, {
             ...values,
           })
           .then((response) => {

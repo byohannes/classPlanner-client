@@ -29,7 +29,7 @@ const Cities = ({ user, component }) => {
   };
   const getCityName = useCallback(async () => {
     try {
-      await axios.get(`/api/v1/courses`).then((response) => {
+      await axios.get(`https://class-planner-api.herokuapp.com/api/v1/courses`).then((response) => {
         let cities = response.data.data.map((course) => course.cityName);
         cities = cities.filter((a, b) => cities.indexOf(a) === b);
         if (cities.length > 0) {

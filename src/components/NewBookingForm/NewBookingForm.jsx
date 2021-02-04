@@ -14,7 +14,7 @@ const NewBookingForm = ({ Class, user, city, WeekNumber }) => {
     values.classId = Class._id;
     values.email = values.email.toLowerCase();
     await axios
-      .post(`/api/v1/bookings`, {
+      .post(`https://class-planner-api.herokuapp.com/api/v1/bookings`, {
         ...values,
       })
       .then((response) => {

@@ -18,7 +18,7 @@ const EditCoursePage = ({ user, city, component, id }) => {
   dayjs.extend(isBetween);
   const getCourses = useCallback(async () => {
     try {
-      const _Courses = await axios.get(`/api/v1/courses/`);
+      const _Courses = await axios.get(`https://class-planner-api.herokuapp.com/api/v1/courses/`);
       if (_Courses.data.data.length > 0) {
         let courseFound = _Courses.data.data.find(
           (Course) => Course._id === id
@@ -37,7 +37,7 @@ const EditCoursePage = ({ user, city, component, id }) => {
     }
   }, [id, history]);
   const getClasses = async () => {
-    let allClasses = await axios.get(`/api/v1/classes/`);
+    let allClasses = await axios.get(`https://class-planner-api.herokuapp.com/api/v1/classes/`);
     if (allClasses.data.data.length > 0) {
       allClasses = allClasses.data.data.filter(
         (Class) => Class.courseCalendar_Id === id
@@ -130,7 +130,7 @@ const EditCoursePage = ({ user, city, component, id }) => {
       } else {
         try {
           await axios
-            .put(`/api/v1/courses/${id}`, {
+            .put(`https://class-planner-api.herokuapp.com/api/v1/courses/${id}`, {
               ...values,
             })
             .then((response) => {

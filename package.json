@@ -38,6 +38,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "https://class-planner-api.herokuapp.com/"
+  }
 }

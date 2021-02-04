@@ -10,7 +10,7 @@ const CancelClass = ({
 }) => {
   function deleteClass() {
     axios
-      .delete(`/api/v1/courses/${currentCourse._id}`)
+      .delete(`https://class-planner-api.herokuapp.com/api/v1/courses/${currentCourse._id}`)
       .then(function (response) {
         if (response.data.success === true) {
           closeHandler();

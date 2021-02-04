@@ -31,7 +31,7 @@ const NewCoursePage = ({ user, city, component }) => {
 
   const getCourses = useCallback(async () => {
     try {
-      let allCourses = await axios.get(`/api/v1/courses`);
+      let allCourses = await axios.get(`https://class-planner-api.herokuapp.com/api/v1/courses`);
       if (allCourses.data.data.length > 0) {
         allCourses = allCourses.data.data.filter(
           (course) => course.cityName === city

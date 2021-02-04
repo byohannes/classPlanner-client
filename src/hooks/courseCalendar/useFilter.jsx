@@ -37,7 +37,7 @@ export const useFilter = () => {
   };
   const get_Classes = async (courseId) => {
     try {
-      let allClasses = await axios.get(`/api/v1/classes/`);
+      let allClasses = await axios.get(`https://class-planner-api.herokuapp.com/api/v1/classes/`);
       let counter = 0;
       if (allClasses.data.data.length > 0) {
         allClasses = allClasses.data.data.filter(
@@ -61,7 +61,7 @@ export const useFilter = () => {
 
   const getData = async (city) => {
     try {
-      let allCourses = await axios.get(`/api/v1/courses/`);
+      let allCourses = await axios.get(`https://class-planner-api.herokuapp.com/api/v1/courses/`);
       if (allCourses.data.data.length > 0) {
         allCourses = allCourses.data.data.filter(
           (course) => course.cityName === city

@@ -29,7 +29,7 @@ const ClassCard = ({ user, city, component, id, Class, WeekNumber }) => {
   };
 
   const get_booking = useCallback(async () => {
-    await axios.get(`/api/v1/bookings/${Class._id}`).then((response) => {
+    await axios.get(`https://class-planner-api.herokuapp.com/api/v1/bookings/${Class._id}`).then((response) => {
       setCurrentBooking(response.data.data);
     });
   }, [Class]);

@@ -21,7 +21,7 @@ const EditClassPage = ({ user, city, component, id }) => {
   dayjs.extend(isBetween);
 
   const getClass = useCallback(async () => {
-    await axios.get(`/api/v1/classes/`).then((response) => {
+    await axios.get(`https://class-planner-api.herokuapp.com/api/v1/classes/`).then((response) => {
       if (response.data.data.length > 0) {
         let classFound = response.data.data.find((Class) => Class._id === id);
         if (classFound) {
@@ -35,7 +35,7 @@ const EditClassPage = ({ user, city, component, id }) => {
     });
   }, [id, history]);
   const getCourses = useCallback(async () => {
-    await axios.get(`/api/v1/courses/`).then((response) => {
+    await axios.get(`https://class-planner-api.herokuapp.com/api/v1/courses/`).then((response) => {
       if (response.data.data.length > 0) {
         let courseFound = response.data.data.filter(
           (course) => course.cityName === city
@@ -51,7 +51,7 @@ const EditClassPage = ({ user, city, component, id }) => {
     });
   }, [city, history]);
   const getClasses = async () => {
-    const allClasses = await axios.get(`/api/v1/classes/`);
+    const allClasses = await axios.get(`https://class-planner-api.herokuapp.com/api/v1/classes/`);
     if (allClasses.data.data.length > 0) {
       return allClasses.data.data;
     } else {
@@ -143,7 +143,7 @@ const EditClassPage = ({ user, city, component, id }) => {
           });
         } else {
           await axios
-            .put(`/api/v1/classes/${id}`, {
+            .put(`https://class-planner-api.herokuapp.com/api/v1/classes/${id}`, {
               ...values,
             })
             .then((response) => {

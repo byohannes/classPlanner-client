@@ -20,7 +20,7 @@ const NewCoursePage = ({ user, city, component }) => {
   dayjs.extend(isBetween);
   const getCourses = async () => {
     try {
-      const _Courses = await axios.get(`/api/v1/courses/`);
+      const _Courses = await axios.get(`https://class-planner-api.herokuapp.com/api/v1/courses/`);
       if (_Courses.data.data && _Courses.data.data.length > 0) {
         return _Courses.data.data;
       } else {
@@ -100,7 +100,7 @@ const NewCoursePage = ({ user, city, component }) => {
       } else {
         try {
           await axios
-            .post(`/api/v1/courses`, {
+            .post(`https://class-planner-api.herokuapp.com/api/v1/courses`, {
               ...values,
             })
             .then((response) => {

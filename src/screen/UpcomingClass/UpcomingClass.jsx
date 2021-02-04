@@ -20,14 +20,14 @@ const UpcomingClass = ({ user, city, component }) => {
     let classes = null;
     let classFound = null;
     try {
-      await axios.get(`/api/v1/courses/`).then(async (response) => {
+      await axios.get(`https://class-planner-api.herokuapp.com/api/v1/courses/`).then(async (response) => {
         if (response.data.data.length > 0) {
           courses = response.data.data.filter(
             (course) => course.cityName === city
           );
           if (courses.length > 0) {
             filteredCourses = courses.map((course) => course._id);
-            await axios.get(`/api/v1/classes`).then((res) => {
+            await axios.get(`https://class-planner-api.herokuapp.com/api/v1/classes`).then((res) => {
               if (res.data.data.length > 0) {
                 classes = res.data.data;
                 classFound = res.data.data

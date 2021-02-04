@@ -10,7 +10,7 @@ const NewBooking = ({ user, city, component, id, WeekNumber }) => {
   const [Class, setClass] = useState(null);
   const history = useHistory();
   const getClass = useCallback(async () => {
-    await axios.get(`/api/v1/classes/`).then((response) => {
+    await axios.get(`https://class-planner-api.herokuapp.com/api/v1/classes/`).then((response) => {
       if (response.data.data.length > 0) {
         let classes = response.data.data.find((_Class) => _Class._id === id);
         if (classes) {

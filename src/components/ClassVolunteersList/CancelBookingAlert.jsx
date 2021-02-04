@@ -27,7 +27,7 @@ const CancelBookingAlert = ({
 
   function deleteBooking() {
     axios
-      .delete(`/api/v1/bookings/${_id}`)
+      .delete(`https://class-planner-api.herokuapp.com/api/v1/bookings/${_id}`)
       .then(function (response) {
         if (response.data.success === true) {
           closeHandler();
