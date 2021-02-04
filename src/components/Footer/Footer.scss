@@ -1,0 +1,39 @@
+@import "./../../scss/variables";
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $footer-bg;
+  font-family: $default-font-family;
+  color: $footer-text-color;
+  font-weight: 300;
+  font-size: 0.85rem;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 30px;
+  text-align: left;
+  p {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  footer {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  footer {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer {
+    font-size: 1.15rem;
+  }
+}

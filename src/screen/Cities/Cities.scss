@@ -1,0 +1,141 @@
+@import "../../scss/variables";
+.course-card-container {  
+  min-height: calc(100vh - 395px);
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 30px;
+  column-gap: 10px;
+  justify-items: center;
+  align-items: flex-start;
+  border-top: 1px solid $classcard-border;
+  padding: 30px 0px;
+  margin: 15px auto 25px auto;
+}
+.course-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  color: $text-dark-color;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  transition: 200ms;
+  text-decoration: none;
+
+  div {
+    text-align: center;
+  }
+  div:nth-child(1) {
+    margin: 10px auto;
+    align-self: flex-end;
+    font-size: 30px;
+  }
+  div:nth-child(2) {
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: $default-font-family;
+  }
+}
+.course-card:hover {
+  background-color: $btn-submit-bg-hover;
+  color: white;
+  cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  .course-card-container {
+    grid-template-columns: auto auto;
+    row-gap: 40px;
+    column-gap: 10px;
+    row-gap: 35px;
+  }
+  .course-card {
+    width: 200px;
+    height: 200px;
+    div:nth-child(1) {
+      margin: 10px auto;
+      align-self: flex-end;
+      font-size: 50px;
+    }
+    div:nth-child(2) {
+      margin: 0 auto;
+      font-size: 20px;
+      font-family: $default-font-family;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .course-card-container {
+    grid-template-columns: auto auto auto;
+    row-gap: 30px;
+    column-gap: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .course-card-container {
+    grid-template-columns: auto auto auto auto;
+    row-gap: 30px;
+    column-gap: 20px;
+  }
+  .course-card {
+    width: 160px;
+    height: 160px;
+    div:nth-child(1) {
+      margin: 10px auto;
+      align-self: flex-end;
+      font-size: 50px;
+    }
+    div:nth-child(2) {
+      margin: 0 auto;
+      font-size: 16px;
+      font-family: $default-font-family;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .course-card-container {
+    grid-template-columns: auto auto auto auto;
+    row-gap: 30px;
+    column-gap: 30px;
+  }
+  .course-card {
+    width: 200px;
+    height: 200px;
+    div:nth-child(1) {
+      margin: 10px auto;
+      align-self: flex-end;
+      font-size: 50px;
+    }
+    div:nth-child(2) {
+      margin: 0 auto;
+      font-size: 20px;
+      font-family: $default-font-family;
+    }
+  }
+}
+
+.city-searchbar {
+  padding: 10px;
+  input{
+    height: 50px;
+    width: 100%;
+    text-indent: 60px;
+    font-size: larger;
+  }
+  i{
+    font-size: larger;
+    position: absolute;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-left: 1px;
+    margin-top: -49px;
+    background-color: $text-bg-light;
+    padding: 14.5px;
+  }
+}
+
+

@@ -1,0 +1,7 @@
+@import "variables";
+
+@mixin default-font {
+  font-family: $default-font-family;
+  font-weight: 300;
+  font-size: 1em;
+}

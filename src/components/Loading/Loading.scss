@@ -1,0 +1,37 @@
+@import "../../scss/variables";
+.loaading-container {
+  animation: FadeIn 500ms;    
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes Loading-Animation {
+  0% {
+    color: #f5f9fc;
+  }
+  50% {
+    color: #79d582;
+  }
+  100% {
+    color: #f5f9fc;
+  }
+}
+.loading{
+  font-family: "Open Sans", sans-serif;
+  padding: 25px;
+  letter-spacing: 2px;
+  color: #79d582;
+  font-weight: bold;
+  border-radius: 50%;
+  animation: Loading-Animation infinite 2s;
+}
+
+.nothing {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-radius: 50%;
+  color: #e50303;
+  padding: 25px;
+}

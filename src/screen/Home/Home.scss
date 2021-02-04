@@ -1,0 +1,122 @@
+@import "../../scss/variables";
+.home_container {
+  animation: FadeIn 500ms;
+}
+.home-main {
+  min-height: calc(100vh - 310px);
+}
+.home-main div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  margin: 0px 20% 35px 20%;
+  height: fit-content;
+}
+
+.home-main-buttons-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-image {
+  width: 100%;
+  height: auto;
+  margin: 15px 0px 25px 0px;
+}
+
+.home-button {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 200px;
+  margin: 10px auto;
+  height: 50px;
+  transition: 200ms;
+  font-family: $default-font-family;
+  font-weight: 400;
+  font-size: 1rem;
+
+  border-radius: 4px;
+  border: 1px solid $btn-syllabus-border;
+  color: #3f3f3f;
+  background-color: white;
+
+  outline: none;
+  text-decoration: none;
+
+  p {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: auto 15px;
+
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  &:hover {
+    background-color: $btn-syllabus-bg-hover;
+  }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .home-image {
+    width: 80%;
+    height: auto;
+    margin: 15px 0px 25px 0px;
+  }
+}
+
+@media (min-width: 992px) {
+  .home-main-buttons-container {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-main div {
+    width: 60%;
+    margin: 0px 20% 35px 20%;
+    height: fit-content;
+  }
+
+  .home-image {
+    width: auto;
+    height: 239px;
+    margin: 15px 0px 25px 0px;
+  }
+
+  .home-button {
+    display: flex;
+    justify-content: center;
+    transition: 200ms;
+    font-family: $default-font-family;
+    font-weight: 400;
+    width: 180px;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid $btn-syllabus-border;
+    color: #3f3f3f;
+    text-decoration: none;
+    margin: 0px 15px;
+    p {
+      display: inline;
+      margin: auto 15px;
+    }
+    p i {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background-color: $btn-syllabus-bg-hover;
+    }
+  }
+}

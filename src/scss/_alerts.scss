@@ -1,0 +1,38 @@
+@import "variables";
+
+@mixin alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.alert-success {
+  @include alert;
+  background-color: $alert-success-bg-color;
+  border-color: $alert-success-border-color;
+  color: $alert-success-text-color;
+}
+
+.alert-danger {
+  @include alert;
+  background-color: $alert-danger-bg-color;
+  border-color: $alert-danger-border-color;
+  color: $alert-danger-text-color;
+}
+.alert-info {
+  @include alert;
+  background-color: $alert-info-bg-color;
+  border-color: $alert-info-border-color;
+  color: $alert-info-text-color;
+}
+
+.alert-light {
+  @include alert;
+  background-color: $alert-light-bg-color;
+  border-color: $alert-light-border-color;
+  color: $alert-light-text-color;
+}

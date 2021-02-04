@@ -1,0 +1,26 @@
+
+.newcourse-container {
+  width: 100%;
+  margin: auto;
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+  .newcourse-container {
+    width: 80%;
+    margin: auto;
+    min-height: calc(100vh - 330px);
+    // margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer {
+    font-size: 1.15rem;
+  }
+}

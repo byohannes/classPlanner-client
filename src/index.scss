@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
+@import "scss/forms";
+@import "scss/tables";
+//@import "scss/buttons";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1em;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  position: relative;
+}
+
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+}
+.Div_Root_CSS {
+  height: 100%;
+}

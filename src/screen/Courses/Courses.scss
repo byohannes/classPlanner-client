@@ -1,0 +1,48 @@
+@import "../../scss/variables";
+@import "../../scss/buttons";
+
+.courses-container {
+  width: 100%;
+  min-height: calc(100vh - 330px);
+  margin-bottom: 50px;
+  animation: FadeIn 500ms;
+  font-family: $default-font-family;
+  font-size: 16px;
+  padding: 5px 10px 10px 5px;
+}
+
+.btn-edit-course {
+  @extend %btn-outline-warning;
+  padding: 10px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-delete-course {
+  @extend %btn-outline-danger;
+  padding: 10px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.hide-city-col {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .courses-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .hide-city-col {
+    display: table-cell;
+  }
+}
+
+tr {
+  transition: 200ms;
+}

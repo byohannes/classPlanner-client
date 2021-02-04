@@ -1,0 +1,546 @@
+@import "../../scss/variables";
+@import "../../scss/buttons";
+
+.classcard-body {
+  animation: FadeIn 500ms;
+}
+.classcard-main {
+  margin: 0 auto 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: $default-font-family;
+  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: 1px;
+  > p {
+    color: $forms-title-color;
+  }
+}
+
+.classcard-border {
+  margin-top: 0px;
+  width: 100%;
+  margin: auto 5px;
+}
+.classcard-container {
+  display: flex;
+  margin: 5px;
+  flex-direction: column;
+  border: 1px solid $form-border-color;
+}
+
+.classcard-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 150px;
+  min-height: 150px;
+  width: 100%;
+  height: 200px;
+  background-color: #f8f8f8;
+
+  margin: auto auto 30px 0;
+  //margin: auto auto 50px auto;
+
+  border-bottom: 8px solid #d12f2f;
+  color: #3f3f3f;
+
+  p:first-child {
+    font-size: 2em;
+    font-weight: 300;
+    margin: 0 auto;
+  }
+
+  p:nth-child(2) {
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0 auto;
+  }
+  p:nth-child(3) {
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0 auto;
+  }
+}
+
+.classcard-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  color: $text-dark-color;
+  padding: 10px;
+}
+
+.classcard-top,
+.classcard-bottom,
+.classcard-disable-bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.classcard-top {
+  align-items: flex-start;
+}
+.classcard-bottom,
+.classcard-disable-bottom {
+  align-items: flex-end;
+  justify-content: space-evenly;
+
+  div {
+    display: flex;
+    margin-top: 20px;
+  }
+}
+
+.classcard-title {
+  font-size: 1em;
+  margin-bottom: 2px;
+}
+.classcard-top div:nth-child(1) p:nth-child(2) {
+  color: #aeaeae;
+  font-size: 12px;
+}
+
+.classcard-top div:nth-child(1) p:nth-child(3) {
+  font-size: 15px;
+}
+
+.URLs-container{
+  display: flex;
+  flex-wrap: nowrap;
+}
+.classcard-syllabus {
+  display: flex;
+  justify-content: center;
+  transition: 200ms;
+  font-family: $default-font-family;
+  font-weight: 300;
+  width: 80px;
+  height: 50px;
+  border-radius: 4px;
+  margin-left: 10px;
+  border: 1px solid $btn-syllabus-border;
+  font-size: 14px;
+  p {
+    margin: auto 5px;
+  }
+
+  :nth-child(2) {
+    margin: auto 5px;
+  }
+
+  &:hover {
+    background-color: $btn-syllabus-bg-hover;
+  }
+}
+
+.classcard-top div:nth-child(2) a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #3f3f3f;
+}
+
+.classcard-volunteers-count-mobile {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  margin-top: 20px;
+
+  a {
+    font-family: $default-font-family;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    margin: auto 0;
+    color: $btn-success-bg-hover;
+  }
+}
+.classcard-volunteers-count-mobile-Disable {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  margin-top: 20px;
+
+  a {
+    font-family: $default-font-family;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    margin: auto 0;
+    color: #aeaeae;
+  }
+}
+
+.classcard-bottom p:first-child {
+  letter-spacing: 0px;
+  transition: 200ms;
+  &:hover {
+    cursor: pointer;
+    color: $text-link-hover-color;
+  }
+}
+
+.classcard-edit-bottom,
+.classcard-attend-bottom,
+.class-card-disable-attend-bottom {
+  @extend %btn-submit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 50px;
+  font-size: 16px;
+  font-family: $default-font-family;
+  font-weight: 300;
+  color: white;
+  border-radius: 4px;
+  transition: 200ms;
+  outline: none;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.class-card-disable-attend-bottom {
+  background-color: $btn-disable-submit;
+  color: white;
+  transition: 200ms;
+  &:hover {
+    background-color: $btn-disable-submit;
+    cursor: default;
+  }
+}
+.classcard-cancel-bottom {
+  @extend %btn-outline-danger;
+  border-radius: 5px;
+  width: 60px;
+  height: 50px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+.classcard-edit-bottom {
+  background-color: #ffffff;
+  border: 1px solid #f0ad4e;
+  align-self: flex-end;
+  margin-right: 10px;
+  color: #f0ad4e;
+  &:hover {
+    background-color: #f0ad4e;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+.classcard-separator {
+  border-top: 1px solid $classcard-border;
+  width: 80%;
+  margin: 40px auto 40px auto;
+}
+.classcard-edit-Link {
+  display: none;
+  text-decoration: none;
+  width: 100%;
+}
+.weeknumber-container {
+  display: none;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  min-width: 80px;
+  min-height: 200px;
+  margin: 0 0 0 10px;
+  border-radius: 2px;
+  background-color: $classcard-weeknumber-bg;
+  color: #ffffff;
+
+  p:first-child {
+    font-size: 0.7em;
+    font-weight: 300;
+    margin: 0 auto;
+  }
+
+  p:nth-child(2) {
+    font-size: 2em;
+    font-weight: 500;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 35px;
+  }
+}
+
+.holiday-week {
+  background-color: $text-light-color;
+}
+
+.classcard-date-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-self: flex-start;
+  width: 100%;
+}
+.weeknumber-container-sm {
+  display: flex;
+  background-color: $classcard-weeknumber-bg;
+  margin-bottom: 5px;
+  height: 60px;
+  text-align: center;
+  p {
+    align-self: center;
+    font-family: $default-font-family;
+    font-size: 26px;
+    font-weight: 500;
+    color: $text-color-light-pale;
+    margin: 0 auto;
+  }
+}
+
+.classcard-edit-Link {
+  width: 100%;
+  p {
+    font-size: 10px;
+  }
+}
+
+.classcard-text-ctl {
+  display: none;
+}
+.classcard-icon-ctl {
+  display: block;
+}
+
+@media (min-width: 360px) {
+  .classcard-cancel-bottom {
+    width: 90px;
+  }
+  .classcard-attend-bottom,
+  .classcard-edit-bottom,
+  .class-card-disable-attend-bottom {
+    width: 90px;
+  }
+
+  .classcard-volunteers-count-mobile {
+    a {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .classcard-edit-Link {
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .classcard-cancel-bottom,
+  .classcard-edit-bottom,
+  .classcard-attend-bottom {
+    width: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .classcard-container {
+    flex-direction: row;
+    border: none;
+  }
+
+  .classcard-date {
+    margin: 0 10px 0 0;
+
+    p:first-child {
+      font-size: 3em;
+      font-weight: 300;
+      margin: 0 auto;
+    }
+
+    p:nth-child(2) {
+      font-size: 1em;
+      font-weight: 500;
+      margin: 0 auto;
+    }
+  }
+
+  .classcard-info {
+    padding: none;
+  }
+  .classcard-main {
+    margin: 0 5px 0px 5px;
+  }
+
+  .classcard-border {
+    border: 1px solid #f1f1f1;
+    margin-top: 0px;
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .classcard-syllabus {
+    width: 120px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .classcard-top div:nth-child(1) p:nth-child(2) {
+    color: #aeaeae;
+    font-size: 15px;
+  }
+
+  .classcard-top div:nth-child(1) p:nth-child(3) {
+    font-size: 20px;
+  }
+
+  .classcard-edit-Link {
+    p {
+      font-size: 16px;
+      font-weight: 600;
+      color: $text-link-color;
+    }
+  }
+
+  .classcard-bottom,
+  .classcard-disable-bottom {
+    align-items: flex-end;
+  }
+  .classcard-edit-bottom,
+  .classcard-attend-bottom,
+  .class-card-disable-attend-bottom {
+    width: 80px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .classcard-cancel-bottom {
+    width: 80px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  .classcard-title {
+    font-size: 1.25em;
+    margin-bottom: 2px;
+  }
+
+  .classcard-date-container {
+    width: 300px;
+  }
+  .weeknumber-container-sm {
+    display: none;
+  }
+
+  .weeknumber-container {
+    display: flex;
+
+    justify-content: center;
+    min-width: 40px;
+    min-height: 200px;
+
+    p:first-child {
+      font-size: 12px;
+      font-weight: 200;
+      margin: 0 auto;
+    }
+
+    p:nth-child(2) {
+      font-size: 1em;
+      font-weight: 500;
+      margin: 0 auto;
+      margin-top: 5px;
+    }
+  }
+
+  .classcard-text-ctl {
+    display: block;
+  }
+  .classcard-icon-ctl {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .classcard-volunteers-count-mobile,
+  .classcard-volunteers-count-mobile-Disable {
+    display: none;
+  }
+
+  .classcard-edit-Link {
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .classcard-main {
+    margin: 0 auto 0px auto;
+  }
+
+  .weeknumber-container-sm {
+    display: none;
+  }
+
+  .weeknumber-container {
+    display: flex;
+    min-width: 80px;
+    min-height: 200px;
+    margin: 0 0 0 10px;
+
+    p:first-child {
+      font-size: 0.7em;
+      font-weight: 300;
+      margin: 0 auto;
+    }
+
+    p:nth-child(2) {
+      font-size: 2em;
+      font-weight: 500;
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 35px;
+    }
+  }
+
+  .classcard-edit-bottom,
+  .classcard-attend-bottom,
+  .class-card-disable-attend-bottom {
+    width: 120px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .classcard-cancel-bottom {
+    width: 120px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .classcard-edit-Link {
+    p {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .weeknumber-container-sm {
+    display: none;
+  }
+
+  .classcard-edit-Link {
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+.classcard-disable-bottom p:first-child {
+  letter-spacing: 0px;
+  font-weight: 300;
+  color: #aeaeae;
+  transition: 200ms;
+  &:hover {
+    cursor: default;
+    color: #aeaeae;
+  }
+}
