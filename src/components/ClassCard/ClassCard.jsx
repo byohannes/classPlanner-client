@@ -221,12 +221,12 @@ const ClassCard = ({ user, city, component, id, Class, WeekNumber }) => {
                           Class.status && (
                             <Link
                               onClick={(e) => {
-                                if (dayjs(Class.date) <= dayjs(new Date())) {
+                                if (dayjs(Class.date).format('DD/MM/YYYY') < dayjs(new Date())) {
                                   e.preventDefault();
                                 }
                               }}
                               className={
-                                dayjs(Class.date) <= dayjs(new Date())
+                                dayjs(Class.date).format('DD/MM/YYYY') < dayjs(new Date())
                                   ? "class-card-disable-attend-bottom"
                                   : "classcard-attend-bottom"
                               }
