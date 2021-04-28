@@ -62,42 +62,6 @@ const NewCoursePage = ({ user, city, component }) => {
           "End Date must be in future!",
       });
     } else {
-      let _Courses = await getCourses();
-      if (_Courses) {
-        _Courses = _Courses.find(
-          (course) =>
-            (dayjs(values.startDate).isBetween(
-              dayjs(course.startDate),
-              dayjs(course.endDate),
-              "day"
-            ) ||
-              dayjs(values.endDate).isBetween(
-                dayjs(course.startDate),
-                dayjs(course.endDate),
-                "day"
-              ) ||
-              dayjs(course.startDate).isBetween(
-                dayjs(values.startDate),
-                dayjs(values.endDate),
-                "day"
-              ) ||
-              dayjs(course.endDate).isBetween(
-                dayjs(values.startDate),
-                dayjs(values.endDate),
-                "day"
-              ) ||
-              course.intakeName === values.intakeName) &&
-            course.cityName === values.cityName
-        );
-      }
-
-      if (_Courses) {
-        setSubmit_F(true);
-        setAlertMessage({
-          type: "danger",
-          message: "Your Data has conflict with other courses!",
-        });
-      } else {
         try {
           await axios
             .post(`https://class-planner-api.herokuapp.com/api/v1/courses`, {
@@ -139,7 +103,6 @@ const NewCoursePage = ({ user, city, component }) => {
             message: "New Course not added !",
           });
         }
-      }
     }
   };
   const { entryData, error, onChange, onSubmit, setSubmit_F } = useForm(
