@@ -114,12 +114,6 @@ const EditClassPage = ({ user, city, component, id }) => {
     } else {
       let allClasses = await getClasses();
       if (allClasses.length > 0) {
-        const conflictClass = allClasses.find(
-          (Class) =>
-            Date.parse(Class.date) === Date.parse(values.date) &&
-            Class.courseCalendar_Id === values.courseCalendar_Id &&
-            Class._id !== currentClass._id
-        );
         const outOfDate = courses.find(
           (course) =>
             dayjs(values.date).isBetween(
@@ -129,13 +123,7 @@ const EditClassPage = ({ user, city, component, id }) => {
               "[]"
             ) && course._id === values.courseCalendar_Id
         );
-        if (conflictClass) {
-          setSubmit_F(true);
-          setAlertMessage({
-            type: "danger",
-            message: "This Date is Already taken by another Class!",
-          });
-        } else if (!outOfDate) {
+        if (!outOfDate) {
           setSubmit_F(true);
           setAlertMessage({
             type: "danger",

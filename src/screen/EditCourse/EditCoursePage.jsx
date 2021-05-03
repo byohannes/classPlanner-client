@@ -74,36 +74,7 @@ const EditCoursePage = ({ user, city, component, id }) => {
         message: "End Date must be in future!",
       });
     } else {
-      let _Courses = await getCourses();
       let _Classes = await getClasses();
-      if (_Courses.length > 0) {
-        _Courses = _Courses.find(
-          (course) =>
-            (dayjs(values.startDate).isBetween(
-              dayjs(course.startDate),
-              dayjs(course.endDate),
-              "day"
-            ) ||
-              dayjs(values.endDate).isBetween(
-                dayjs(course.startDate),
-                dayjs(course.endDate),
-                "day"
-              ) ||
-              dayjs(course.startDate).isBetween(
-                dayjs(values.startDate),
-                dayjs(values.endDate),
-                "day"
-              ) ||
-              dayjs(course.endDate).isBetween(
-                dayjs(values.startDate),
-                dayjs(values.endDate),
-                "day"
-              ) ||
-              course.intakeName === values.intakeName) &&
-            course.cityName === values.cityName &&
-            course._id !== id
-        );
-      }
       if (_Classes.length > 0) {
         _Classes = _Classes.filter(
           (Class) =>
@@ -114,13 +85,7 @@ const EditCoursePage = ({ user, city, component, id }) => {
             )
         );
       }
-      if (_Courses) {
-        setSubmit_F(true);
-        setAlertMessage({
-          type: "danger",
-          message: "Your Date has conflict with other courses!",
-        });
-      } else if (_Classes.length > 0) {
+      if (_Classes.length > 0) {
         setSubmit_F(true);
         setAlertMessage({
           type: "danger",

@@ -34,14 +34,14 @@ const NewClassPage = ({ user, city, component }) => {
       }
     });
   }, [city, history]);
-  const getClasses = async () => {
-    const allClasses = await axios.get(`https://class-planner-api.herokuapp.com/api/v1/classes/`);
-    if (allClasses.data.data.length > 0) {
-      return allClasses.data.data;
-    } else {
-      return [];
-    }
-  };
+  // const getClasses = async () => {
+  //   const allClasses = await axios.get(`https://class-planner-api.herokuapp.com/api/v1/classes/`);
+  //   if (allClasses.data.data.length > 0) {
+  //     return allClasses.data.data;
+  //   } else {
+  //     return [];
+  //   }
+  // };
   const newClass = async (values) => {
     if (
       Date.parse(`01/01/2020 ${values.startTime}:00`) >=
@@ -59,15 +59,15 @@ const NewClassPage = ({ user, city, component }) => {
         message: "Date is not valid!",
       });
     } else {
-      let allClasses = await getClasses();
-      let conflictClass = null;
-      if (allClasses.length > 0) {
-        conflictClass = allClasses.find(
-          (Class) =>
-            Date.parse(Class.date) === Date.parse(values.date) &&
-            Class.courseCalendar_Id === values.courseCalendar_Id
-        );
-      }
+      // let allClasses = await getClasses();
+      // let conflictClass = null;
+      // if (allClasses.length > 0) {
+      //   conflictClass = allClasses.find(
+      //     (Class) =>
+      //       Date.parse(Class.date) === Date.parse(values.date) &&
+      //       Class.courseCalendar_Id === values.courseCalendar_Id
+      //   );
+      // }
       const outOfDate = courses.find(
         (course) =>
           dayjs(values.date).isBetween(
@@ -77,13 +77,7 @@ const NewClassPage = ({ user, city, component }) => {
             "[]"
           ) && course._id === values.courseCalendar_Id
       );
-      if (conflictClass) {
-        setSubmit_F(true);
-        setAlertMessage({
-          type: "danger",
-          message: "This Date is Already taken by another Class!",
-        });
-      } else if (!outOfDate) {
+      if (!outOfDate) {
         setSubmit_F(true);
         setAlertMessage({
           type: "danger",
