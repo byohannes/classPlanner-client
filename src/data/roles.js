@@ -1,5 +1,9 @@
 export const classRoles = [
   {
+    id: 0,
+    roleName: "Choose the role",
+  },
+  {
     id: 1,
     roleName: "Coordinator",
   },
@@ -26,6 +30,10 @@ export const classRoles = [
 ];
 
 export const eventRoles = [
+  {
+    id: 0,
+    roleName: "Choose the role",
+  },
   {
     id: 1,
     roleName: "Organizer",
@@ -60,6 +68,10 @@ export const eventRoles = [
   },
 ];
 export const introRoles = [
+  {
+    id: 0,
+    roleName: "Choose the role",
+  },
   {
     id: 1,
     roleName: "Zoom Master/ Lesson Lead (Experienced Volunteer)",
