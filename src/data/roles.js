@@ -21,11 +21,27 @@ export const classRoles = [
   },
   {
     id: 5,
-    roleName: "Personal Development Rep",
+    roleName: "Teaching Assistant AM",
   },
   {
     id: 6,
+    roleName: "Teaching Assistant PM",
+  },
+  {
+    id: 7,
+    roleName: "Personal Development Rep",
+  },
+  {
+    id: 8,
     roleName: "Zoom Master",
+  },
+  {
+    id: 9,
+    roleName: "Zoom Master AM",
+  },
+  {
+    id: 10,
+    roleName: "Zoom Master PM",
   },
 ];
 
